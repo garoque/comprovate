@@ -1,6 +1,8 @@
 package user
 
 import (
+	"context"
+
 	"github.com/garoque/comprovate/model"
 	"gorm.io/gorm"
 )
@@ -13,10 +15,10 @@ func NewUser(db *gorm.DB) Database {
 	return &user{db}
 }
 
-func (u *user) FindByEmail(email string) (*model.User, error) {
+func (u *user) FindByEmail(ctx context.Context, email string) (*model.User, error) {
 	var user model.User
 
-	if err := u.db.Where("email = ?", email).First(&user).Error; err != nil {
+	if err := u.db.WithContext(ctx).Where("email = ?", email).First(&user).Error; err != nil {
 		return nil, err
 	}
 

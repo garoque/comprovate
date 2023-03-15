@@ -35,7 +35,7 @@ func (u *handler) Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	user, err := u.db.FindByEmail(input.Email)
+	user, err := u.db.FindByEmail(r.Context(), input.Email)
 	if err != nil {
 		w.WriteHeader(http.StatusNotFound)
 		json.NewEncoder(w).Encode(err.Error())

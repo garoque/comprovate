@@ -20,7 +20,7 @@ func NewProductHandler(db product.Database) ProductHandlerInterface {
 }
 
 func (h *handler) GetProducts(w http.ResponseWriter, r *http.Request) {
-	products, err := h.db.FindAll()
+	products, err := h.db.FindAll(r.Context())
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		json.NewEncoder(w).Encode(err.Error())

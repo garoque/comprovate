@@ -1,7 +1,11 @@
 package user
 
-import "github.com/garoque/comprovate/model"
+import (
+	"context"
+
+	"github.com/garoque/comprovate/model"
+)
 
 type Database interface {
-	FindByEmail(email string) (*model.User, error)
+	FindByEmail(ctx context.Context, email string) (*model.User, error)
 }

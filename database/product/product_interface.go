@@ -1,7 +1,11 @@
 package product
 
-import "github.com/garoque/comprovate/model"
+import (
+	"context"
+
+	"github.com/garoque/comprovate/model"
+)
 
 type Database interface {
-	FindAll() ([]model.Product, error)
+	FindAll(ctx context.Context) ([]model.Product, error)
 }
