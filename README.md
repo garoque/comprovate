@@ -24,3 +24,4 @@ Utilizando o comando padrão, `go run main.go`. O comando irá levantar o banco 
 
 ## Stacks:
 <img src="https://go.dev/blog/go-brand/Go-Logo/SVG/Go-Logo_Aqua.svg" height="50">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/764px-SQLite370.svg.png?20140602232932" height="50">
