@@ -23,7 +23,7 @@ func NewUserHandler(db user.Database) UserHandlerInterface {
 	return &handler{db}
 }
 
-func (u *handler) Login(w http.ResponseWriter, r *http.Request) {
+func (h *handler) Login(w http.ResponseWriter, r *http.Request) {
 	jwt := r.Context().Value("jwt").(*jwtauth.JWTAuth)
 	jwtExpiresIn := r.Context().Value("jwtExpiresIn").(int)
 	var input model.UserLogin
@@ -35,7 +35,7 @@ func (u *handler) Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	user, err := u.db.FindByEmail(r.Context(), input.Email)
+	user, err := h.db.FindByEmail(r.Context(), input.Email)
 	if err != nil {
 		w.WriteHeader(http.StatusNotFound)
 		json.NewEncoder(w).Encode(err.Error())
