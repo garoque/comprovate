@@ -23,4 +23,4 @@ Exemplo de payload da request para teste:
 Utilizando o comando padrão, `go run main.go`. O comando irá levantar o banco de dados, inserir os dados mockados dos produtos e de um user para teste.
 
 ## Stacks:
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/marcopollivier/go-simple-icons/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/marcopollivier/go-simple-icons/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/marcopollivier/go-simple-icons/tree/main.svg?style=svg)]
